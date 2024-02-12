@@ -1,9 +1,11 @@
 import java.util.Scanner;
 
+import Model.*;
+
 public class Program
 {
 
-    private static ClassRole_Model[] classes;
+    private static Model.Class[] classes;
     private static int classCount;
 
     static boolean isRunning = true;
@@ -43,17 +45,17 @@ public class Program
 
     public static void initClasses()
     {
-        classes = new ClassRole_Model[classCount];
-
+        classes = new Model.Class[classCount];
         Scanner scnr = new Scanner(System.in);
-        System.out.print("Enter class name: ");
-        String className = scnr.next();
-        System.out.print("Enter class number: ");
-        int classNumber = scnr.nextInt(3); //how many digits max
+
 
         for(int i = 0; i < classes.length; ++i)
         {
-            classes[i] = new ClassRole_Model(className, classNumber);
+            System.out.print("Enter class name: ");
+            String className = scnr.next();
+            System.out.print("Enter class number: ");
+            int classNumber = scnr.nextInt(3); //how many digits max
+            classes[i] = new Model.Class(className, classNumber);
         }
     }
 
@@ -69,15 +71,16 @@ public class Program
     {
         for(int i = 0; i < classes.length; ++i )
         {
-            System.out.println("Class Name: " + classes[i].className);
-            System.out.println("Class Number: " + classes[i].classNumber);
-            Student_Model[] students = classes[i].getClasses();
-            for(Student_Model student: students)
+            System.out.println("Class Name: " + classes[i].getClassName());
+            System.out.println("Class Number: " + classes[i].getClassNumber());
+            Student[] students = classes[i].getClasses();
+            for(Student student: students)
             {
                 System.out.println(student.getFirstName()
                         + " " + student.getLastName()
                         + " " + student.getStudentID());
             }
+            System.out.print("- - -");
         }
 
     }

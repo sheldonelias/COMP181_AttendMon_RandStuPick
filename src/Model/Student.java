@@ -1,11 +1,13 @@
+package Model;
+
 import java.util.Scanner;
-public class Student_Model
+public class Student
 {
     private String firstName;
     private String lastName;
     private String studentID;
 
-    Student_Model()
+    public Student()
     {
         setFirstName();
         setLastName();

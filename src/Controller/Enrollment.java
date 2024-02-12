@@ -1,24 +1,27 @@
-import java.util.Scanner;
+package Controller;
 
-public class Enrollment_Control
+import java.util.Scanner;
+import Model.*;
+
+public class Enrollment
 {
 
-    static Student_Model[]  enterStudentData()
+    public static Student[]  enterStudentData()
     {
         Scanner scnr = new Scanner(System.in);
         System.out.print("Enter total enrolled students: ");
         int studentCount = scnr.nextInt();
-        Student_Model[] students = new Student_Model[studentCount];
+        Student[] students = new Student[studentCount];
 
         for(int i = 0; i < students.length; ++i)
         {
-            students[i] = new Student_Model();
+            students[i] = new Student();
             System.out.println("- - - - -");
         }
         return students;
     }
 
-    static void  printStudentData(Student_Model[] students)
+    static void  printStudentData(Student[] students)
     {
         for(int i = 0; i < students.length; i++)
         {
