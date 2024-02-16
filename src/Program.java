@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 import Model.*;
+import View.AttendanceReport;
 
 public class Program
 {
@@ -26,10 +27,29 @@ public class Program
                 case "C": System.out.println("You selected Create Roles");
                     enterClassCount();
                     initClasses();
+
+
+
                     break;
                 case "p":
                 case "P": System.out.println("You selected Print Roles");
                     printAllClasses();
+
+                    //-- test zone ---
+                    //The arg delivers an array of students
+                    System.out.println( classes[0].getClasses()[0].getFirstName()   );
+
+                    //Code to use
+                    AttendanceReport report = new AttendanceReport();
+                    //the argument is an array students
+                    try
+                    {
+                        report.printAttendanceReport(classes[0].getClasses(), classes[0].getClassName());
+                    }catch(Exception excpt)
+                    {
+                        System.out.println("Output file not found. " + excpt);
+                        System.exit(-1);
+                    }
                     break;
                 case "x":
                 case "X": System.out.println("You selected Exit.");
@@ -80,7 +100,7 @@ public class Program
                         + " " + student.getLastName()
                         + " " + student.getStudentID());
             }
-            System.out.print("- - -");
+            System.out.println("- - -");
         }
 
     }

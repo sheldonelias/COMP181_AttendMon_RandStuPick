@@ -5,11 +5,13 @@ import Controller.Enrollment;
 
 public class Class
 {
+    //INSTANCE VARIABLES
     String className;
     int classNumber;
     Model.Student[] students;
 
 
+    //CONSTRUCTOR
     public Class(String className, int classNumber)
     {
         this.className = className;
@@ -18,6 +20,8 @@ public class Class
 
     }
 
+    //USER DEFINED METHODS
+    //GETTERS AND SETTERS
     public Student[] getClasses()
     {
         return students;
