@@ -21,6 +21,7 @@ public class Program
             Scanner scnr = new Scanner(System.in);
             String menuChoice = scnr.next();
 
+            //Menu choice interface system
             switch(menuChoice)
             {
                 case "c":
@@ -28,25 +29,27 @@ public class Program
                     enterClassCount();
                     initClasses();
 
-
-
                     break;
                 case "p":
                 case "P": System.out.println("You selected Print Roles");
                     printAllClasses();
 
-                    //-- test zone ---
+                    //-- TEST ZONE ---
                     //The arg delivers an array of students
                     System.out.println( classes[0].getClasses()[0].getFirstName()   );
 
-                    //Code to use
+                    //CODE TO USE
+                    //Instantiate Attendance report object
                     AttendanceReport report = new AttendanceReport();
-                    //the argument is an array students
+
                     try
                     {
+                        //first argument is an array students, and second arg is a String
                         report.printAttendanceReport(classes[0].getClasses(), classes[0].getClassName());
                     }catch(Exception excpt)
                     {
+                        //In case bad news, can't create file. Have to this also at other end
+                        //in the called class where printAttendanceReport is.
                         System.out.println("Output file not found. " + excpt);
                         System.exit(-1);
                     }
