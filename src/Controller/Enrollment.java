@@ -5,7 +5,7 @@ import Model.*;
 
 public class Enrollment
 {
-
+    //Creates an array of students for a class
     public static Student[]  enterStudentData()
     {
         //Creating user input captures
@@ -28,6 +28,7 @@ public class Enrollment
 
     static void  printStudentData(Student[] students)
     {
+        //Prints the data of all students in one given array
         for(int i = 0; i < students.length; i++)
         {
             System.out.println(
@@ -37,6 +38,4 @@ public class Enrollment
                     );
         }
     }
-
-
 }

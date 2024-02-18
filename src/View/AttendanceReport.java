@@ -30,21 +30,22 @@ public class AttendanceReport
         Arrays.sort(students);
         //System.out.println( students.length);//Checking length
 
-        // Exception check in the event the app has not permissions to build file.
+        // Exception check in the event the app has no permissions to build file.
         try
         {
             //Use file output class and instantiate with file name and path as arg
             FileOutputStream fis = new FileOutputStream("src/AttendanceReport.txt");
-            //Instantiate an printwriter
+            //Instantiate a printwriter
             PrintWriter pw = new PrintWriter(fis);
-            //Check to console that className is working
-            System.out.println(className);
+            //Check print to console that className is working
+            //System.out.println(className);
             //Write to file first line of className and date
             pw.println(className + ", " + date);
             //Loop through student list to print every student in array
             for(int i = 0; i < students.length; ++i)
             {
-                System.out.println( students[i].getFirstName() + ", " + students[i].getLastName() + ", " + students[i].getStudentID());
+                //Check print to console that student info is working
+                //System.out.println( students[i].getFirstName() + ", " + students[i].getLastName() + ", " + students[i].getStudentID());
                 String line = students[i].getFirstName() + ", " + students[i].getLastName() + ", " + students[i].getStudentID();
                 pw.println(line);
             }

@@ -36,7 +36,7 @@ public class Program
 
                     //-- TEST ZONE ---
                     //The arg delivers an array of students
-                    System.out.println( classes[0].getClasses()[0].getFirstName()   );
+                    //System.out.println( classes[0].getClasses()[0].getFirstName()   );
 
                     //CODE TO USE
                     //Instantiate Attendance report object
@@ -71,7 +71,6 @@ public class Program
         classes = new Model.Class[classCount];
         Scanner scnr = new Scanner(System.in);
 
-
         for(int i = 0; i < classes.length; ++i)
         {
             System.out.print("Enter class name: ");
@@ -87,7 +86,6 @@ public class Program
         System.out.print("Enter number of classes: ");
         Scanner scnr = new Scanner(System.in);
         classCount = scnr.nextInt();
-
     }
 
     public static void printAllClasses()
