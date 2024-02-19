@@ -38,9 +38,9 @@ public class Enrollment
         for(int i = 0; i < students.length; i++)
         {
             System.out.println(
-            students[i].getFirstName() + " " +
-            students[i].getLastName() + " " +
-            students[i].getStudentID()
+                    students[i].getStudentID() + " " +
+                    students[i].getFirstName() + " " +
+                    students[i].getLastName()
                     );
 
         }
