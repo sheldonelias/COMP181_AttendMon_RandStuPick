@@ -19,15 +19,20 @@ public class Enrollment
         //Building the array of full student places
         for(int i = 0; i < students.length; ++i)
         {
-            //Instantiating new students
-            students[i] = new Student();
+            //Instantiating new students data keyed in and not loading from a file
+            students[i] = new Student(false);
             System.out.println("- - - - -");
         }
+
+        printStudentData(students);
+
         return students;
     }
 
     static void  printStudentData(Student[] students)
     {
+        System.out.println("You enrolled the following students.");
+
         //Prints the data of all students in one given array
         for(int i = 0; i < students.length; i++)
         {
@@ -36,6 +41,7 @@ public class Enrollment
             students[i].getLastName() + " " +
             students[i].getStudentID()
                     );
+            System.out.println("- - - - -");
         }
     }
 }
