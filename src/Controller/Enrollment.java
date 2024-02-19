@@ -6,7 +6,7 @@ import Model.*;
 public class Enrollment
 {
     //Creates an array of students for a class
-    public static Student[]  enterStudentData()
+    public static Student[]  enterStudentData(String className, String classNumber)
     {
         //Creating user input captures
         Scanner scnr = new Scanner(System.in);
@@ -24,15 +24,16 @@ public class Enrollment
             System.out.println("- - - - -");
         }
 
-        printStudentData(students);
+        printStudentData(students, className, classNumber);
 
         return students;
     }
 
-    static void  printStudentData(Student[] students)
+    static void  printStudentData(Student[] students, String className, String classNumber)
     {
-        System.out.println("You enrolled the following students.");
-
+        System.out.println("- - - - -");
+        System.out.println("You enrolled the following students in: \n" +
+                classNumber + ": " + className);
         //Prints the data of all students in one given array
         for(int i = 0; i < students.length; i++)
         {
@@ -41,7 +42,7 @@ public class Enrollment
             students[i].getLastName() + " " +
             students[i].getStudentID()
                     );
-            System.out.println("- - - - -");
+
         }
     }
 }
