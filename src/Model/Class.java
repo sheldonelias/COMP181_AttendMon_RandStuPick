@@ -7,31 +7,51 @@ public class Class
 {
     //INSTANCE VARIABLES
     String className;
-    int classNumber;
-    Model.Student[] students;
-
+    String classNumber;
+    Student[] students;
 
     //CONSTRUCTOR
-    public Class(String className, int classNumber)
+    public Class(String className, String classNumber, boolean doesExist)
     {
-        this.className = className;
-        this.classNumber = classNumber;
-        students = Enrollment.enterStudentData();
-
+        if(!doesExist)
+        {
+            this.className = className;
+            this.classNumber = classNumber;
+            students = Enrollment.enterStudentData(this.className, this.classNumber);
+        }else
+        {
+            this.className = className;
+            this.classNumber = classNumber;
+        }
     }
 
     //USER DEFINED METHODS
     //GETTERS AND SETTERS
-    public Student[] getClasses()
+    public Student[] getStudents()
     {
         return students;
+    }
+
+    public void setStudents(Student[] students)
+    {
+        this.students = students;
+
+        //DEBUG: Loop shows all students in Student[] students array assigned to class
+        /*
+        for(Student student: this.students)
+        {
+            if(student != null) {
+                System.out.println(" setStudents() | " + student.getLastName());
+            }
+        }
+        */
     }
 
     public String getClassName()
     {
         return className;
     }
-    public int getClassNumber()
+    public String getClassNumber()
     {
         return classNumber;
     }
