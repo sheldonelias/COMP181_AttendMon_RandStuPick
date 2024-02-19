@@ -20,7 +20,7 @@ public class Enrollment
         for(int i = 0; i < students.length; ++i)
         {
             //Instantiating new students data keyed in and not loading from a file
-            students[i] = new Student(false);
+            students[i] = new Student(false, String.valueOf (i+1));
             System.out.println("- - - - -");
         }
 
