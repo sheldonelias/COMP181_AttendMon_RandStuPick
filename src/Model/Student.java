@@ -7,32 +7,60 @@ public class Student
     private String lastName;
     private String studentID;
 
-    public Student()
+    public Student(boolean isLoading, String studentID)
     {
-        setFirstName();
-        setLastName();
-        setStudentID();
+        if(!isLoading)
+        {
+            setStudentID(studentID);
+            System.out.println("Enter data for student " + studentID);
+            setFirstNameByKeyIn();
+            setLastNameByKeyIn();
+        }
+
     }
 
-    public void setFirstName()
+    public Student(String firstName, String lastName, String studentID)
+    {
+        setFirstName(firstName);
+        setLastName(lastName);
+        setStudentID(studentID);
+
+    }
+
+    public void setFirstName(String firstName)
+    {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName)
+    {
+        this.lastName = lastName;
+    }
+
+    public void setStudentID(String studentID)
+    {
+        this.studentID = studentID;
+    }
+
+    public void setFirstNameByKeyIn()
     {
         System.out.print("Enter first name: ");
         Scanner scnr = new Scanner(System.in);
-        firstName = scnr.next();
+        firstName = scnr.nextLine();
     }
 
-    public void setLastName()
+    public void setLastNameByKeyIn()
     {
         System.out.print("Enter last name: ");
         Scanner scnr = new Scanner(System.in);
-        lastName = scnr.next();
+        lastName = scnr.nextLine();
     }
 
-    public void setStudentID()
+    public void setStudentIDByKeyIn()
     {
         System.out.print("Enter student id: ");
         Scanner scnr = new Scanner(System.in);
-        studentID = scnr.next();
+        studentID = scnr.nextLine();
     }
 
     public String getFirstName()
