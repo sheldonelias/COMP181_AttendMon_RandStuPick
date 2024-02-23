@@ -1,0 +1,57 @@
+Class Name: Advanced Programming Class Number: COMP 181
+Student Name 1 Last: Briggs First: Aenea
+Student Name 2 Last: Chun First: Jane
+Student Name 3 Last: Haak First: Sophie
+Student Name 4 Last: Heatherly First: Jack
+Student Name 5 Last: Millen First: Sidney
+Student Name 6 Last: Smith First: Maddi
+Student Name 7 Last: Tulley First: Max
+Student Name 8 Last: Wolgamot First: Sonia
+Student Name 9 Last: Zhao First: Renquan
+
+Class Name: Computer Graphics Class Number: COMP 313
+Student Name 1 Last: Cornejo First: Jesus
+Student Name 2 Last: Derrod First: James
+Student Name 3 Last: Fierros First: Jonathan
+Student Name 4 Last: Hogan First: Nat
+Student Name 5 Last: Hong First: Seolbin
+Student Name 6 Last: Howlett First: Lukas
+Student Name 7 Last: Huh First: James
+Student Name 8 Last: Khazeni First: Aiden
+Student Name 9 Last: Leus First: Princess
+Student Name 10 Last: Li First: William
+Student Name 11 Last: Liao First: Xin
+Student Name 12 Last: Mullen First: Sidney
+Student Name 13 Last: Mo First: Tiffany
+Student Name 14 Last: Morrell First: Ryan
+Student Name 15 Last: Peeler First: Ruby
+Student Name 16 Last: Robers First: Gisela
+Student Name 17 Last: Santiago First: Diego
+Student Name 18 Last: Sau First: Sheea
+Student Name 19 Last: Wang First: James
+Student Name 20 Last: Wong First: Janice
+Student Name 21 Last: Wu First: Ruige
+Student Name 22 Last: Yotov First: Julianne
+
+Class Name: Mobile Apps Class Number: COMP 371
+Student Name 1 Last: Allen First: Kyla
+Student Name 2 Last: Cantrell First: Nico
+Student Name 3 Last: Chai First: Rui
+Student Name 4 Last: Cornejo First: Jesus
+Student Name 5 Last: Cuellar First: Brian
+Student Name 6 Last: Fries First: Kincaid
+Student Name 7 Last: Howlett First: Lukas
+Student Name 8 Last: Huh First: James
+Student Name 9 Last: Kim First: Danny
+Student Name 10 Last: Li First: William
+Student Name 11 Last: Martinez First: Luis
+Student Name 12 Last: Mo First: Tiffany
+Student Name 13 Last: Pedrosa First: Phylicia
+Student Name 14 Last: Perry First: Lavender
+Student Name 15 Last: Renteria First: Dani
+Student Name 16 Last: Santiago First: Diego
+Student Name 17 Last: Valdez First: Bridget
+Student Name 18 Last: Wong First: Janice
+Student Name 19 Last: Wong First: Joshua
+Student Name 20 Last: Wu First: Ruige
+
