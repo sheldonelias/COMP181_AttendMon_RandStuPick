@@ -1,6 +1,9 @@
 package Model;
 
+//IO Classes
+import java.util.InputMismatchException;
 import java.util.Scanner;
+
 public class Student
 {
     private String firstName;
@@ -12,6 +15,7 @@ public class Student
         if(!isLoading)
         {
             setStudentID(studentID);
+            System.out.println("- - - - -");
             System.out.println("Enter data for student " + studentID);
             setFirstNameByKeyIn();
             setLastNameByKeyIn();
@@ -60,7 +64,25 @@ public class Student
     {
         System.out.print("Enter student id: ");
         Scanner scnr = new Scanner(System.in);
-        studentID = scnr.nextLine();
+
+        while(true)
+        {
+            try
+            {
+                studentID = scnr.nextLine();
+                break;
+
+            }catch (InputMismatchException excpt)
+            {
+                System.out.println("Invalid input. Try again.");
+
+                scnr.reset();
+                scnr.next();
+            }
+        }
+
+
+
     }
 
     public String getFirstName()

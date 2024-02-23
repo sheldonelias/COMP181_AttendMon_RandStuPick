@@ -1,21 +1,44 @@
 package Controller;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
-import Model.*;
+import Model.Student;
 
 public class Enrollment
 {
     //Creates an array of students for a class
-    public static Student[]  enterStudentData(String className, String classNumber)
+    public static Student[] enterStudentData(String className, String classNumber)
     {
         //Creating user input captures
         Scanner scnr = new Scanner(System.in);
-        //Getting the count of students in a class
-        System.out.print("Enter total enrolled students: ");
-        int studentCount = scnr.nextInt();
-        //Instantiating array to hold all student names
-        Student[] students = new Student[studentCount];
 
+        Student[] students = new Student[0];
+        int studentCount = -1;
+
+        while(true)
+        {
+            try
+            {
+                //Getting the count of students in a class
+                System.out.print("Enter total enrolled students: ");
+                studentCount = scnr.nextInt();
+                break;
+
+            } catch (InputMismatchException excpt)
+            {
+                //Error message
+                System.out.println("You entered an invalid value: " + excpt.getMessage());
+                System.out.println("Try again.");
+
+                //Resets scnr
+                scnr.reset();
+                scnr.next();
+            }
+        }
+
+
+        //Instantiating array to hold all student names
+        students = new Student[studentCount];
         //Building the array of full student places
         for(int i = 0; i < students.length; ++i)
         {
@@ -31,18 +54,18 @@ public class Enrollment
 
     static void  printStudentData(Student[] students, String className, String classNumber)
     {
-        System.out.println("- - - - -");
+
         System.out.println("You enrolled the following students in: \n" +
                 classNumber + ": " + className);
         //Prints the data of all students in one given array
-        for(int i = 0; i < students.length; i++)
+        for(Student student: students)
         {
             System.out.println(
-                    students[i].getStudentID() + " " +
-                    students[i].getFirstName() + " " +
-                    students[i].getLastName()
+                    student.getStudentID() + " " +
+                    student.getFirstName() + " " +
+                    student.getLastName()
                     );
-
         }
+        System.out.println("- - - - -");
     }
 }

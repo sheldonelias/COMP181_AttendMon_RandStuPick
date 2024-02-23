@@ -3,7 +3,7 @@ package Model;
 import Controller.Enrollment;
 
 
-public class Class
+public class ClassCS implements Class
 {
     //INSTANCE VARIABLES
     String className;
@@ -11,7 +11,7 @@ public class Class
     Student[] students;
 
     //CONSTRUCTOR
-    public Class(String className, String classNumber, boolean doesExist)
+    public ClassCS(String className, String classNumber, boolean doesExist)
     {
         if(!doesExist)
         {
