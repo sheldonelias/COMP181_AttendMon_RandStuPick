@@ -188,7 +188,7 @@ public class Program
         return classCount;
     }
 
-    public static void saveClasses()
+    public static void saveClasses() throws IOException
     {
         System.out.println("saveClasses() activated.");
 
