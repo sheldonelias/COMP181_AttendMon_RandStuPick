@@ -190,60 +190,35 @@ public class Program
 
     public static void saveClasses() throws IOException
     {
-        // Exception check in the event the app has no permissions to build file.
-        try
-        {
-            //Use file output class and instantiate with file name and path as arg
-            String outputFile = String.format("src/Classes.txt");
-            FileOutputStream fis = new FileOutputStream(outputFile);
-            //Instantiate a printwriter
-            PrintWriter pw = new PrintWriter(fis);
+        System.out.println("saveClasses() activated.");
 
-        for(ClassCS classToSave: classCS) {
-            //Capture current date and time.
-            LocalDateTime now = LocalDateTime.now();
+        // Exception check if there is path availalbe to build a file.
+        //Remember, many paths are to mounted network drives
+        //TODO:
+        // A. Write a try/catch block that
+        // 1. Declares/initializes a string with pathname
+        // 2. Declares/initializes a FileOutputStream
+        // 3. Declares/initializes a PrintWriter
+        // B. Write an enhanced for-loop that iterates through each class array and
+        // 1. Captures declares/initializes a LocalDateTime object
+        // 2. Declares/initializes in class scope a DateTimeFormatter object
+        //    with the static method DateTimeFormatter.ofPattern("yyyy/MM/dd 'at' HH:mm:ss")
+        // 3. In the try, initializes the DateTimeFormatter object with the instance
+        //    method format(LocalDateTime.now()
+        // 4. Declares and initializes a local scoped String with:
+        //    "Class Name: " + classToSave.getClassName() + " " + "Class Number: " +
+        //                    classToSave.getClassNumber();
+        // 5. Print the string declared in #4 above to the output file using the PrintWriter object.
+        // 6. Declare and initialize a Student array, and initialize with classToSave.getStudents();
+        // 7. Write a for loop that stores it local scoped string:
+        //    "Student Name " + students[i].getStudentID() +
+        //                            " Last: " + students[i].getLastName() +
+        //                            " First: " + students[i].getFirstName();
+        // 8. Print the string from #7 above to the output file using the PrintWriter object.
+        // 9. Print a blank line to the output file using the PrintWriter object.
+        // 10. Flush and close the PrintWriter object
+        // 11. Complete the catch part of the try/catch so that at the end of it, the system exits with error -1
 
-            //Set date at instantiation. We will learn to get a real date
-            dateTimeString = dtf1.format(LocalDateTime.now());
-
-            String line = "Class Name: " + classToSave.getClassName() + " " + "Class Number: " +
-                    classToSave.getClassNumber();
-
-            //DEBUG: Check print to console that className is working
-            System.out.println(line);
-
-            //Write to file first line of className and date
-            pw.println(line);
-
-            //Loop through student list to print every student in array
-            Student[] students = classToSave.getStudents();
-            for (int i = 0; i < students.length; ++i) {
-                if (students[i] != null) {
-                    line = "Student Name " + students[i].getStudentID() +
-                            " Last: " + students[i].getLastName() +
-                            " First: " + students[i].getFirstName();
-
-                    //DEBUG: Check print to console that student info is working
-                    //System.out.println(line);
-
-                    pw.println(line);
-                }
-            }
-            pw.println();
-            //DEBUG: Check print to console that student info is working
-            //System.out.println();
-        }
-
-        //Must flush and close, kind of like airplane toilets all PrintWriter objects
-        pw.flush();
-        pw.close();
-
-        }catch(IOException excpt)
-        {
-            //In case of rare bad news that file could not be created.
-            System.out.println("Output file not found. " + excpt);
-            System.exit(-1);
-        }
     }
 
     public static ClassCS[] getClasses()
