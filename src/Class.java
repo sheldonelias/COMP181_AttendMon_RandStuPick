@@ -82,8 +82,11 @@ public class Class
         {
             System.out.println(stu.getStudentId() + ": " + stu.getFirstName() + " " + stu.getLastName());
         }
+    }
 
-
+    public Student[] getStudents()
+    {
+        return students;
     }
 
     public void setClassName(String className)

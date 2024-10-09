@@ -1,3 +1,6 @@
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 
@@ -9,7 +12,7 @@ public class Program
 
     private static int classCount;
 
-    public static void main(String[] args)
+    public static void main(String[] args) throws Exception
     {
         //System.out.println("Program | main() activated.");
 
@@ -19,6 +22,7 @@ public class Program
 
         printAllRoles();
 
+        saveClasses();
 
 
 
@@ -57,13 +61,56 @@ public class Program
     }
 
 
+    public static void saveClasses() throws IOException
+    {
+        for(int i = 0; i < classes.length; ++i) {
+
+            String filepath = "output/" + classes[i].getClassNumber() + "_role.txt";
+
+            try {
+
+                FileOutputStream fileout = new FileOutputStream(filepath);
+
+                PrintWriter pw = new PrintWriter(fileout);
+
+                pw.println(classes[i].getClassNumber() + ", " + classes[i].getClassName());
+
+                pw.println("StudentFirstName" + ", " + "StudentLastName" + ", " + "StudentID");
+
+                for(Student stu: classes[i].getStudents())
+                {
+                    pw.println(stu.getFirstName() + ", " + stu.getLastName() + ", " + stu.getStudentId());
+                }
+
+                pw.close();
+
+            } catch (IOException excpt) {
+
+                System.out.println("ERROR: " + excpt.getMessage());
+
+            }
+
+        }
+
+    }
+
+
     public static void printAllRoles()
     {
         //Loop to check the results
-        int count = 0;
+        int classCount = 0;
         for(Class cl: classes)
-        {   count++;
-            System.out.println(count + ": "+ cl.getClassNumber() + " " + cl.getClassName());
+        {   classCount++;
+            System.out.println(classCount + ": "+ cl.getClassNumber() + " " + cl.getClassName());
+
+            int studentCount = 0;
+            for(Student stu: cl.getStudents())
+            {
+                studentCount++;
+                System.out.println(stu.getStudentId() + " " +studentCount + " " + stu.getFirstName() + " " + stu.getLastName() );
+
+            }
+
         }
     }
 
