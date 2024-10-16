@@ -1,4 +1,0 @@
-Class Name: sd Class Number: 1
-Student Name 1 Last: s First: d
-Student Name 2 Last: f First: e
-

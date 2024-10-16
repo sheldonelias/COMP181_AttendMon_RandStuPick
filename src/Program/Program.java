@@ -219,6 +219,61 @@ public class Program
         // 10. Flush and close the PrintWriter object
         // 11. Complete the catch part of the try/catch so that at the end of it, the system exits with error -1
 
+        try
+        {
+            //Use file output class and instantiate with file name and path as arg
+            String outputFile = String.format("src/Classes.txt");
+            FileOutputStream fis = new FileOutputStream(outputFile);
+            //Instantiate a printwriter
+            PrintWriter pw = new PrintWriter(fis);
+
+            for(ClassCS classToSave: classCS) {
+                //Capture current date and time.
+                LocalDateTime now = LocalDateTime.now();
+
+                //Set date at instantiation. We will learn to get a real date
+                dateTimeString = dtf1.format(LocalDateTime.now());
+
+                String line = "Class Name: " + classToSave.getClassName() + " " + "Class Number: " +
+                        classToSave.getClassNumber();
+
+                //DEBUG: Check print to console that className is working
+                System.out.println(line);
+
+                //Write to file first line of className and date
+                pw.println(line);
+
+                //Be sure to confirm text printing output to file of the className
+                //and classNumber before writing the Student array loop
+                //Loop through student list to print every student in array
+                Student[] students = classToSave.getStudents();
+                for (int i = 0; i < students.length; ++i) {
+                    if (students[i] != null) {
+                        line = "Student Name " + students[i].getStudentID() +
+                                " Last: " + students[i].getLastName() +
+                                " First: " + students[i].getFirstName();
+
+                        //DEBUG: Check print to console that student info is working
+                        //System.out.println(line);
+
+                        pw.println(line);
+                    }
+                }
+                pw.println();
+                //DEBUG: Check print to console that student info is working
+                //System.out.println();
+            }
+
+            //Must flush and close, kind of like airplane toilets all PrintWriter objects
+            pw.flush();
+            pw.close();
+
+        }catch(IOException excpt)
+        {
+            //In case of rare bad news that file could not be created.
+            System.out.println("Output file not found. " + excpt);
+            System.exit(-1);
+        }
     }
 
     public static ClassCS[] getClasses()
@@ -231,7 +286,7 @@ public class Program
         //Set date at instantiation. We will learn to get a real date
         dateTimeString = dtf1.format(LocalDateTime.now());
 
-        for(int i = 0; i < classCS.length; ++i )
+        for(int i = 0; i < classCS.length; ++i)
         {
             try {
                 System.out.println(classCS[i].getClassNumber() + ": " + classCS[i].getClassName() +

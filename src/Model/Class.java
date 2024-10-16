@@ -8,6 +8,8 @@ public interface Class
 
     Student[] students = new Student[0];
 
+    //Methods become abstract
+
     public abstract Student[] getStudents();
 
     public void setStudents(Student[] students);

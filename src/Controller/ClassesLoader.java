@@ -305,7 +305,7 @@ public class ClassesLoader
                     String lastName = studentData.substring(studentData.indexOf("Last: ") +
                             "Last: ".length(), studentData.indexOf("First: "));
                     String studentNumber = studentData.substring(studentData.indexOf("Name ") + "Name ".length(),
-                            studentData.indexOf(":"));
+                            studentData.indexOf("Last: "));
 
                     //Create and assign new Student object to Student[] array students at localCount index
                     students[localCount] = new Student(firstName.trim(), lastName.trim(), studentNumber.trim());
